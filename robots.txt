@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://863683348.github.io/image-compressor/sitemap.xml
+Sitemap: https://image-compressor-blue-xi.vercel.app/sitemap.xml
