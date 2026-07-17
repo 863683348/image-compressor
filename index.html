@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#4f46e5" />
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%20%C2%B7%20%E7%BA%AF%E6%9C%AC%E5%9C%B0%E5%A4%84%E7%90%86%22%2C%22short_name%22%3A%22%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%22%2C%22description%22%3A%22%E7%BA%AF%E5%89%8D%E7%AB%AF%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%EF%BC%8C%E9%9A%90%E7%A7%81%E4%BC%98%E5%85%88%22%2C%22start_url%22%3A%22./%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f6f7f9%22%2C%22theme_color%22%3A%22%234f46e5%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20192%20192%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%234f46e5%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2306b6d4%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27192%27%20height%3D%27192%27%20rx%3D%2740%27%20fill%3D%27url(%23g)%27%2F%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22any%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%22%7D%5D%7D" />
+<title>图片压缩 · 在线图片压缩工具（JPG/PNG/WebP/AVIF），100%本地隐私优先</title>
+<meta name="description" content="免费在线图片压缩工具，100% 本地处理、图片不上传服务器。支持 JPG/PNG/WebP/AVIF 压缩与格式转换、按目标大小自动压缩、批量处理与 ZIP 导出，隐私安全、断网可用。" />
+<meta name="keywords" content="图片压缩,在线图片压缩,图片压缩工具,批量图片压缩,压缩图片到指定大小,本地图片压缩 不上传,隐私图片压缩,WebP转换,AVIF压缩,PNG转WebP,image compressor,compress images,photo compressor,private image compressor,image compressor no upload,AVIF converter,WebP converter,compress image to 200kb,batch image compressor,optimize images for web" />
+<meta name="author" content="Image Compressor" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="application-name" content="图片压缩" />
+<link rel="canonical" href="./" />
+<link rel="alternate" hreflang="zh-CN" href="./" />
+<link rel="alternate" hreflang="en" href="./" />
+<link rel="alternate" hreflang="x-default" href="./" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="图片压缩 · 在线图片压缩工具（JPG/PNG/WebP/AVIF），100%本地隐私优先" />
+<meta property="og:description" content="Free online image compressor — 100% in-browser, private, no uploads. Compress & convert JPG/PNG/WebP/AVIF, hit a target file size, batch process, export ZIP. Works offline." />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:url" content="./" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="图片压缩 · 在线图片压缩工具（JPG/PNG/WebP/AVIF），100%本地隐私优先" />
+<meta name="twitter:description" content="Free online image compressor — 100% in-browser, private, no uploads. Compress & convert JPG/PNG/WebP/AVIF, hit a target file size, batch process, export ZIP. Works offline." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "图片压缩 · 隐私优先的在线图片压缩工具",
+  "alternateName": "Image Compressor — 100% Private, In-Browser",
+  "url": "./",
+  "description": "免费在线图片压缩工具，100% 本地处理、图片不上传服务器。支持 JPG/PNG/WebP/AVIF 压缩与格式转换、按目标大小自动压缩、批量处理与 ZIP 导出。",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": ["zh-CN", "en"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["本地压缩，图片不上传服务器", "JPG/PNG/WebP/AVIF 压缩与互转", "按目标大小自动调质量", "批量压缩与 ZIP 打包", "原图/压缩图对比", "离线可用 PWA"],
+  "browserRequirements": "Requires JavaScript and a modern browser with Canvas/OffscreenCanvas support."
+}
+</script>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #4f46e5;
+    --primary-soft: #eef2ff;
+    --ok: #16a34a;
+    --warn: #dc2626;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.05);
+    --radius: 14px;
+  }
+  [data-theme="dark"] {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --text: #e7e9ee;
+    --muted: #9aa3b2;
+    --border: #2a2f3a;
+    --primary: #818cf8;
+    --primary-soft: #1e2230;
+    --ok: #4ade80;
+    --warn: #f87171;
+    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+  * { box-sizing: border-box; }
+  .seo-h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; }
+
+  header.top {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; min-width: 0; }
+  .brand .logo {
+    width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    display: grid; place-items: center; color: #fff; font-weight: 800;
+  }
+  .brand .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .badge {
+    font-size: 12px; font-weight: 600; color: var(--ok);
+    background: color-mix(in srgb, var(--ok) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent);
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .toolbar { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .icon-btn {
+    border: 1px solid var(--border); background: var(--panel); color: var(--text);
+    min-width: 38px; height: 38px; border-radius: 10px; cursor: pointer; font-size: 15px;
+    display: grid; place-items: center; transition: .15s; padding: 0 10px; font-weight: 600;
+  }
+  .icon-btn:hover { border-color: var(--primary); }
+
+  .dropzone {
+    border: 2px dashed var(--border); border-radius: var(--radius);
+    background: var(--panel); padding: 46px 20px; text-align: center;
+    transition: .2s; cursor: pointer; box-shadow: var(--shadow);
+  }
+  .dropzone.drag { border-color: var(--primary); background: var(--primary-soft); transform: translateY(-1px); }
+  .dropzone .big { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .dropzone .sub { color: var(--muted); font-size: 13px; }
+  .dropzone .fmt { margin-top: 12px; font-size: 12px; color: var(--muted); }
+
+  .settings {
+    display: flex; flex-wrap: wrap; gap: 18px 26px; align-items: flex-end;
+    margin: 18px 0; padding: 16px 18px; background: var(--panel);
+    border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+  }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .quality-row { display: flex; align-items: center; gap: 10px; min-width: 240px; }
+  input[type="range"] { width: 200px; accent-color: var(--primary); }
+  .qval { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 42px; }
+  .hint { font-size: 12px; color: var(--ok); font-weight: 600; min-height: 16px; }
+  select, input[type="number"] {
+    border: 1px solid var(--border); background: var(--bg); color: var(--text);
+    border-radius: 9px; padding: 8px 10px; font-size: 14px; outline: none;
+  }
+  select:focus, input[type="number"]:focus { border-color: var(--primary); }
+  .target-box { display: flex; align-items: center; gap: 8px; }
+  .target-box input[type="number"] { width: 96px; }
+  .check { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text); }
+
+  .summary {
+    display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center;
+    margin: 14px 0; padding: 12px 16px; background: var(--primary-soft);
+    border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+    border-radius: var(--radius); font-size: 14px;
+  }
+  .summary b { font-variant-numeric: tabular-nums; }
+  .summary .save { color: var(--ok); font-weight: 700; }
+  .summary .spacer { flex: 1; }
+  .summary .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  button.btn {
+    border: none; border-radius: 10px; padding: 9px 14px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: .15s; background: var(--primary); color: #fff;
+  }
+  button.btn:hover { filter: brightness(1.07); }
+  button.btn:disabled { opacity: .45; cursor: not-allowed; }
+  button.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  button.btn.ghost:hover { border-color: var(--primary); }
+  button.btn.tiny { padding: 5px 9px; font-size: 12px; }
+
+  table.list { width: 100%; border-collapse: collapse; background: var(--panel);
+    border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  table.list th, table.list td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
+  table.list th { background: color-mix(in srgb, var(--bg) 60%, var(--panel)); color: var(--muted); font-weight: 600; }
+  table.list tr:last-child td { border-bottom: none; }
+  .thumb { width: 46px; height: 46px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); }
+  .ratio { color: var(--ok); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .col-act { display: flex; gap: 6px; flex-wrap: wrap; }
+  .status { font-size: 12px; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+  .status.pending { background: #f1f5f9; color: #475569; }
+  [data-theme="dark"] .status.pending { background: #2a2f3a; color: #9aa3b2; }
+  .status.processing { background: #fef9c3; color: #a16207; }
+  .status.done { background: color-mix(in srgb, var(--ok) 15%, transparent); color: var(--ok); }
+  .status.fail { background: color-mix(in srgb, var(--warn) 15%, transparent); color: var(--warn); }
+  .row-fail td { background: color-mix(in srgb, var(--warn) 6%, var(--panel)); }
+  .err-msg { color: var(--warn); font-size: 12px; margin-top: 4px; }
+
+  .empty { text-align: center; color: var(--muted); padding: 30px; }
+
+  footer { margin-top: 26px; color: var(--muted); font-size: 12px; text-align: center; line-height: 1.7; }
+
+  /* Modal */
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: none;
+    align-items: center; justify-content: center; padding: 20px; z-index: 50; }
+  .modal.open { display: flex; }
+  .modal-box { background: var(--panel); border-radius: var(--radius); width: min(960px, 96vw);
+    max-height: 92vh; overflow: auto; box-shadow: var(--shadow); }
+  .modal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); gap: 10px; }
+  .modal-head h3 { margin: 0; font-size: 16px; }
+  .modal-body { padding: 18px; }
+  .cmp-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .cmp-side { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cmp-side .pane { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg); }
+  .cmp-side .pane .cap { padding: 8px 12px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+  .cmp-side .pane img { width: 100%; display: block; max-height: 52vh; object-fit: contain; background:
+    repeating-conic-gradient(#e9ecef 0% 25%, #fff 0% 50%) 50% / 18px 18px; }
+  .cmp-slider { position: relative; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg); user-select: none; touch-action: none; }
+  .cmp-slider img { width: 100%; display: block; max-height: 56vh; object-fit: contain; }
+  .cmp-slider .top { position: absolute; inset: 0; overflow: hidden; }
+  .cmp-slider .top img { width: 100%; }
+  .cmp-slider .divider { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--primary); cursor: ew-resize; }
+  .cmp-slider .divider::after { content: "⇆"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: var(--primary); color: #fff; border-radius: 999px; width: 30px; height: 30px; display: grid; place-items: center; font-size: 14px; }
+  .cmp-slider .label { position: absolute; top: 8px; padding: 3px 8px; font-size: 11px; background: rgba(0,0,0,.55); color: #fff; border-radius: 6px; }
+  .cmp-slider .label.l { left: 8px; }
+  .cmp-slider .label.r { right: 8px; }
+  .hidden { display: none !important; }
+
+  .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+    background: #111827; color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 13px;
+    opacity: 0; pointer-events: none; transition: .25s; z-index: 80; max-width: 90vw; text-align: center; }
+  .toast.show { opacity: 1; }
+
+  /* ---------- 移动端适配 ---------- */
+  @media (max-width: 768px) {
+    .wrap { padding: 16px 12px calc(56px + env(safe-area-inset-bottom)); }
+    header.top { gap: 10px; }
+    .brand { font-size: 15px; }
+    .brand .logo { width: 30px; height: 30px; font-size: 14px; }
+    .badge { font-size: 11px; padding: 2px 7px; }
+    .dropzone { padding: 34px 14px; }
+    .dropzone .big { font-size: 15px; }
+    .settings { gap: 14px 16px; padding: 14px; }
+    .field, .quality-row, .target-box { min-width: 100%; width: 100%; }
+    .quality-row { gap: 12px; }
+    input[type="range"] { width: 100%; flex: 1; }
+    .summary { flex-direction: column; align-items: stretch; gap: 8px; }
+    .summary .spacer { display: none; }
+    .summary .actions { width: 100%; }
+    .summary .actions .btn { flex: 1; }
+    .cmp-side { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 380px) {
+    .brand .name { max-width: 96px; }
+  }
+  .seo-copy { max-width: 880px; margin: 28px auto 0; padding: 0 14px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .seo-copy h2 { font-size: 17px; color: var(--text); margin: 22px 0 8px; }
+  .seo-copy h3 { font-size: 15px; color: var(--text); margin: 16px 0 4px; }
+  .seo-copy p { margin: 4px 0 8px; }
+  .seo-copy a { color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="seo-h1" data-i18n="seoH1">在线图片压缩工具 — 100% 本地处理、隐私优先的图片压缩器（Image Compressor），支持 JPG/PNG/WebP/AVIF 压缩与格式转换、按目标大小自动压缩、批量处理与 ZIP 导出</h1>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">压</span>
+      <span class="name" data-i18n="brand">图片压缩</span>
+      <span class="badge" data-i18n="badge">🔒 全程本地处理 · 不上传</span>
+    </div>
+    <div class="toolbar">
+      <button class="icon-btn" id="langBtn" data-i18n-title="langTitle">EN</button>
+      <button class="icon-btn" id="themeBtn" data-i18n-title="themeTitle">🌗</button>
+    </div>
+  </header>
+
+  <div class="dropzone" id="dropzone">
+    <div class="big" data-i18n="dropBig">拖拽图片到此处 / 或点击选择</div>
+    <div class="sub" data-i18n="dropSub">也支持 Ctrl+V 直接粘贴截图</div>
+    <div class="fmt" data-i18n="dropFmt">支持 JPG · PNG · WebP（单文件 ≤ 50MB，可批量）</div>
+    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" multiple hidden />
+  </div>
+
+  <div class="settings" id="settings">
+    <div class="field">
+      <label data-i18n="quality">压缩质量</label>
+      <div class="quality-row">
+        <input type="range" id="quality" min="1" max="100" value="75" />
+        <span class="qval" id="qval">75%</span>
+      </div>
+      <div class="hint" id="liveHint"></div>
+    </div>
+    <div class="field">
+      <label data-i18n="format">输出格式</label>
+      <select id="format">
+        <option value="keep">保持原格式</option>
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </div>
+    <div class="field">
+      <label data-i18n="target">目标大小（可选）</label>
+      <div class="target-box">
+        <label class="check"><input type="checkbox" id="targetOn" /> <span data-i18n="targetTo">压到</span></label>
+        <input type="number" id="targetKb" min="10" max="10240" placeholder="KB" data-i18n="kb" disabled />
+      </div>
+    </div>
+  </div>
+
+  <div class="summary hidden" id="summary">
+    <span><span data-i18n="sumOrig">原始总计</span>：<b id="sumOrig">0</b></span>
+    <span><span data-i18n="sumComp">压缩后</span>：<b id="sumComp">0</b></span>
+    <span class="save"><span data-i18n="sumSave">已节省</span> <b id="sumSave">0%</b></span>
+    <span class="spacer"></span>
+    <div class="actions">
+      <button class="btn ghost tiny" id="selAll" data-i18n="selAll">全选</button>
+      <button class="btn tiny" id="dlZip" data-i18n="dlZip">打包下载 ZIP</button>
+      <button class="btn ghost tiny" id="clearAll" data-i18n="clear">清空</button>
+    </div>
+  </div>
+
+  <table class="list" id="list">
+    <thead>
+      <tr>
+        <th style="width:34px"><input type="checkbox" id="selHead" /></th>
+        <th style="width:60px" data-i18n="colPreview">预览</th>
+        <th data-i18n="colName">文件名</th>
+        <th data-i18n="colOrig">原大小</th>
+        <th data-i18n="colComp">压缩后</th>
+        <th data-i18n="colRatio">压缩率</th>
+        <th data-i18n="colStatus">状态</th>
+        <th data-i18n="colAct">操作</th>
+      </tr>
+    </thead>
+    <tbody id="listBody"></tbody>
+  </table>
+
+  <section class="seo-copy" aria-label="关于与常见问题">
+    <h2 data-i18n="seoAbout">关于这款在线图片压缩工具（Image Compressor）</h2>
+    <p data-i18n="seoAboutP">这是一个 100% 在浏览器本地运行的在线图片压缩工具（image compressor），图片不会上传到任何服务器，隐私安全。支持 JPG、PNG、WebP、AVIF 等常见格式的压缩与格式互转（image converter），可批量图片压缩（batch image compressor）并一键导出 ZIP。适合需要压缩图片用于网站、公众号、电商、报名照片或邮件附件的用户，也适合关注「图片压缩 SEO / 网站图片优化 / optimize images for web」的站长。</p>
+
+    <h2 data-i18n="seoFaq">常见问题（FAQ）</h2>
+    <h3 data-i18n="faq1Q">如何压缩图片而不明显改变画质？</h3>
+    <p data-i18n="faq1A">拖动「压缩质量」滑块（默认 75%），工具会实时显示压缩后体积与压缩率。WebP 在 80–85 质量下通常与原图视觉一致，体积可减小 60%–90%。这正是「compress images without losing quality」的最佳实践。</p>
+
+    <h3 data-i18n="faq2Q">怎么把图片压缩到指定大小（例如 200KB）？</h3>
+    <p data-i18n="faq2A">勾选「目标大小」，输入目标 KB（如 200），工具会自动二分调整质量，尽量把图片压到该大小以内——非常适合报名照片、微信 / 邮件附件的体积限制，也就是大家搜的「压缩图片到指定大小 / compress image to 200kb」。</p>
+
+    <h3 data-i18n="faq3Q">批量图片压缩怎么用？</h3>
+    <p data-i18n="faq3A">直接拖入多张图片，或按 Ctrl+V 粘贴截图，所有图片会进入队列并行压缩，完成后可单张下载或打包 ZIP 一次导出。</p>
+
+    <h3 data-i18n="faq4Q">这款图片压缩工具安全吗？会泄露我的图片吗？</h3>
+    <p data-i18n="faq4A">不会。所有压缩都在你的设备本地完成，断网也能用；图片不会离开浏览器，也没有任何上传请求。这也是「private image compressor / image compressor no upload / 本地图片压缩 不上传」的核心卖点。</p>
+
+    <h3 data-i18n="faq5Q">支持 WebP / AVIF 格式转换吗？</h3>
+    <p data-i18n="faq5A">支持将 JPG / PNG 转换为 WebP；AVIF 因浏览器编码限制会自动降级为 WebP 并在页面提示，确保可用。对于追求极限体积的「AVIF converter / AVIF 压缩」需求，建议后续在支持的浏览器中使用。</p>
+  </section>
+
+  <footer data-i18n="footer">所有图片仅在你的浏览器内压缩，不会发送到任何服务器 · 断网也可用 · 本页为纯前端 MVP 原型</footer>
+</div>
+
+<!-- Preview Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle" data-i18n="modalTitle">对比预览</h3>
+      <button class="icon-btn" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="cmp-tabs">
+        <button class="btn tiny" id="tabSide" data-i18n="tabSide">并排对比</button>
+        <button class="btn ghost tiny" id="tabSlider" data-i18n="tabSlider">滑块对比</button>
+      </div>
+      <div id="cmpSide" class="cmp-side"></div>
+      <div id="cmpSlider" class="cmp-slider hidden">
+        <img id="sliderBase" data-i18n-alt="paneOrig" alt="原图" />
+        <div class="top" id="sliderTop"><img id="sliderTopImg" data-i18n-alt="paneComp" alt="压缩图" /></div>
+        <div class="divider" id="sliderDivider"></div>
+        <span class="label l" data-i18n="origLabel">原图</span>
+        <span class="label r" data-i18n="compLabel">压缩图</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ---------- i18n ---------- */
+const I18N = {
+  zh: {
+    title: "图片压缩 · 纯本地处理，隐私优先",
+    brand: "图片压缩",
+    badge: "🔒 全程本地处理 · 不上传",
+    themeTitle: "切换暗色/亮色",
+    langTitle: "切换语言",
+    dropBig: "拖拽图片到此处 / 或点击选择",
+    dropSub: "也支持 Ctrl+V 直接粘贴截图",
+    dropFmt: "支持 JPG · PNG · WebP（单文件 ≤ 50MB，可批量）",
+    quality: "压缩质量",
+    format: "输出格式",
+    fmtKeep: "保持原格式",
+    fmtJpg: "JPG", fmtPng: "PNG", fmtWebp: "WebP",
+    target: "目标大小（可选）",
+    targetTo: "压到",
+    targetUnreachable: "无法达到目标大小，已使用最低质量（压缩后仍偏大）",
+    kb: "KB",
+    sumOrig: "原始总计",
+    sumComp: "压缩后",
+    sumSave: "已节省",
+    selAll: "全选",
+    dlZip: "打包下载 ZIP",
+    clear: "清空",
+    colSel: "选择", colPreview: "预览", colName: "文件名", colOrig: "原大小",
+    colComp: "压缩后", colRatio: "压缩率", colStatus: "状态", colAct: "操作",
+    footer: "所有图片仅在你的浏览器内压缩，不会发送到任何服务器 · 断网也可用 · 压缩会移除图片元数据（如位置信息） · 本页为纯前端 MVP 原型",
+    modalTitle: "对比预览",
+    tabSide: "并排对比", tabSlider: "滑块对比",
+    origLabel: "原图", compLabel: "压缩图",
+    empty: "还没有图片，快上传试试 👆",
+    stPending: "待处理", stProcessing: "处理中", stDone: "已完成", stFail: "失败",
+    actPreview: "预览", actDl: "下载", actCopy: "复制", actDel: "移除",
+    processing: "处理中…",
+    errFmt: "不支持的格式（仅 JPG/PNG/WebP/AVIF）",
+    errSize: "单文件不可超过 50MB",
+    toastPacked: "已打包 {n} 张",
+    toastNoDownload: "没有可下载的压缩图",
+    toastCopied: "已复制到剪贴板",
+    toastCopyFail: "当前浏览器不支持复制，请改用下载",
+    confirmClear: "确定清空所有图片？",
+    paneOrig: "原图",
+    paneComp: "压缩图",
+    avifFallback: "当前浏览器暂不支持导出 AVIF，已自动改用 WebP",
+    liveHint: "当前设置平均压缩 ↓{pct}%",
+    liveHintEmpty: "上传图片后将实时显示压缩效果",
+    langBtn: "EN",
+    seoH1: "在线图片压缩工具 — 100% 本地处理、隐私优先的图片压缩器（Image Compressor），支持 JPG/PNG/WebP/AVIF 压缩与格式转换、按目标大小自动压缩、批量处理与 ZIP 导出",
+    seoAbout: "关于这款在线图片压缩工具（Image Compressor）",
+    seoAboutP: "这是一个 100% 在浏览器本地运行的在线图片压缩工具（image compressor），图片不会上传到任何服务器，隐私安全。支持 JPG、PNG、WebP、AVIF 等常见格式的压缩与格式互转（image converter），可批量图片压缩（batch image compressor）并一键导出 ZIP。适合需要压缩图片用于网站、公众号、电商、报名照片或邮件附件的用户，也适合关注「图片压缩 SEO / 网站图片优化 / optimize images for web」的站长。",
+    seoFaq: "常见问题（FAQ）",
+    faq1Q: "如何压缩图片而不明显改变画质？",
+    faq1A: "拖动「压缩质量」滑块（默认 75%），工具会实时显示压缩后体积与压缩率。WebP 在 80–85 质量下通常与原图视觉一致，体积可减小 60%–90%。这正是「compress images without losing quality」的最佳实践。",
+    faq2Q: "怎么把图片压缩到指定大小（例如 200KB）？",
+    faq2A: "勾选「目标大小」，输入目标 KB（如 200），工具会自动二分调整质量，尽量把图片压到该大小以内——非常适合报名照片、微信 / 邮件附件的体积限制，也就是大家搜的「压缩图片到指定大小 / compress image to 200kb」。",
+    faq3Q: "批量图片压缩怎么用？",
+    faq3A: "直接拖入多张图片，或按 Ctrl+V 粘贴截图，所有图片会进入队列并行压缩，完成后可单张下载或打包 ZIP 一次导出。",
+    faq4Q: "这款图片压缩工具安全吗？会泄露我的图片吗？",
+    faq4A: "不会。所有压缩都在你的设备本地完成，断网也能用；图片不会离开浏览器，也没有任何上传请求。这也是「private image compressor / image compressor no upload / 本地图片压缩 不上传」的核心卖点。",
+    faq5Q: "支持 WebP / AVIF 格式转换吗？",
+    faq5A: "支持将 JPG / PNG 转换为 WebP；AVIF 因浏览器编码限制会自动降级为 WebP 并在页面提示，确保可用。对于追求极限体积的「AVIF converter / AVIF 压缩」需求，建议后续在支持的浏览器中使用。",
+  },
+  en: {
+    title: "Image Compressor · 100% Local, Privacy First",
+    brand: "Image Compressor",
+    badge: "🔒 Processed locally · never uploaded",
+    themeTitle: "Toggle dark/light",
+    langTitle: "Switch language",
+    dropBig: "Drag images here / or click to choose",
+    dropSub: "You can also paste a screenshot with Ctrl+V",
+    dropFmt: "JPG · PNG · WebP (≤ 50MB each, batch OK)",
+    quality: "Quality",
+    format: "Output format",
+    fmtKeep: "Keep original",
+    fmtJpg: "JPG", fmtPng: "PNG", fmtWebp: "WebP",
+    target: "Target size (optional)",
+    targetTo: "Down to",
+    targetUnreachable: "Target size unreachable — used lowest quality (still larger than target)",
+    kb: "KB",
+    sumOrig: "Original total",
+    sumComp: "Compressed",
+    sumSave: "Saved",
+    selAll: "Select all",
+    dlZip: "Download ZIP",
+    clear: "Clear",
+    colSel: "Select", colPreview: "Preview", colName: "File name", colOrig: "Original",
+    colComp: "Compressed", colRatio: "Ratio", colStatus: "Status", colAct: "Action",
+    footer: "All images are compressed in your browser only — never sent to any server · works offline · compression strips image metadata (e.g. location) · pure-frontend MVP prototype",
+    modalTitle: "Compare preview",
+    tabSide: "Side by side", tabSlider: "Slider compare",
+    origLabel: "Original", compLabel: "Compressed",
+    empty: "No images yet — upload one to start 👆",
+    stPending: "Pending", stProcessing: "Processing", stDone: "Done", stFail: "Failed",
+    actPreview: "Preview", actDl: "Download", actCopy: "Copy", actDel: "Remove",
+    processing: "Processing…",
+    errFmt: "Unsupported format (only JPG/PNG/WebP/AVIF)",
+    errSize: "File must be ≤ 50MB",
+    toastPacked: "Packed {n} images",
+    toastNoDownload: "No compressed images to download",
+    toastCopied: "Copied to clipboard",
+    toastCopyFail: "Copy not supported here — use Download instead",
+    confirmClear: "Clear all images?",
+    paneOrig: "Original",
+    paneComp: "Compressed",
+    avifFallback: "AVIF export isn't supported here yet — switched to WebP automatically",
+    liveHint: "Current settings: ↓{pct}% on average",
+    liveHintEmpty: "Upload images to see live compression results",
+    langBtn: "中",
+    seoH1: "Online Image Compressor — 100% local, privacy-first (Image Compressor). Compress & convert JPG/PNG/WebP/AVIF, auto-compress to a target size, batch processing and ZIP export.",
+    seoAbout: "About this online Image Compressor",
+    seoAboutP: "This is a 100% in-browser online image compressor — your photos never leave your device and are never uploaded to any server, so your privacy is safe. It supports compressing and converting common formats like JPG, PNG, WebP and AVIF (image converter), batch image compression (batch image compressor), and one-click ZIP export. Great for shrinking images for websites, WeChat official accounts, e-commerce, application photos or email attachments — and for webmasters focused on image compression SEO / optimizing images for web.",
+    seoFaq: "FAQ",
+    faq1Q: "How do I compress images without losing visible quality?",
+    faq1A: "Drag the Quality slider (default 75%); the tool shows the compressed size and ratio in real time. At quality 80–85, WebP usually looks identical to the original while cutting size by 60%–90% — exactly the best practice for compressing images without losing quality.",
+    faq2Q: "How do I compress an image to a specific size (e.g. 200KB)?",
+    faq2A: "Enable Target size, enter the target KB (e.g. 200), and the tool auto-adjusts quality via binary search to fit under that size — perfect for application photos or WeChat / email attachment limits, i.e. compress image to 200kb.",
+    faq3Q: "How does batch image compression work?",
+    faq3A: "Just drag in several images, or paste a screenshot with Ctrl+V. All images enter a queue and compress in parallel; when done you can download each one or export everything as a ZIP.",
+    faq4Q: "Is this image compressor safe? Will my images leak?",
+    faq4A: "No. All compression happens locally on your device and works offline; images never leave the browser and there are no upload requests — the core selling point of a private image compressor / image compressor no upload.",
+    faq5Q: "Do you support WebP / AVIF conversion?",
+    faq5A: "Yes — JPG / PNG can be converted to WebP. AVIF export falls back to WebP automatically with an on-page notice because of browser encoding limits. For extreme-size needs (AVIF converter / AVIF compression), use a browser that supports AVIF encoding.",
+  },
+};
+function t(key, params) {
+  let s = (I18N[state.lang] && I18N[state.lang][key]) || key;
+  if (params) for (const k in params) s = s.split("{" + k + "}").join(params[k]);
+  return s;
+}
+
+/* ---------- 工具函数 ---------- */
+const $ = (id) => document.getElementById(id);
+const fmtSize = (b) => {
+  if (b < 1024) return b + " B";
+  if (b < 1024 * 1024) return (b / 1024).toFixed(1) + " KB";
+  return (b / 1024 / 1024).toFixed(2) + " MB";
+};
+const extOf = (mime) => ({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/avif": "avif" }[mime] || "img");
+const toast = (msg) => {
+  const t2 = $("toast"); t2.textContent = msg; t2.classList.add("show");
+  clearTimeout(toast._t); toast._t = setTimeout(() => t2.classList.remove("show"), 2200);
+};
+
+/* ---------- 状态 ---------- */
+const state = {
+  quality: 75,
+  format: "keep",
+  targetOn: false,
+  targetKb: null,
+  items: [],
+  lang: "zh",
+};
+const WHITE = ["image/jpeg", "image/png", "image/webp", "image/avif"];
+const MAX = 50 * 1024 * 1024;
+
+/* 参数记忆 */
+try {
+  const saved = JSON.parse(localStorage.getItem("ic_cfg") || "{}");
+  if (saved.quality) state.quality = saved.quality;
+  if (saved.format) state.format = saved.format;
+  if (saved.targetOn) state.targetOn = saved.targetOn;
+  if (saved.targetKb) state.targetKb = saved.targetKb;
+} catch (e) {}
+try { const l = localStorage.getItem("ic_lang"); if (l === "en" || l === "zh") state.lang = l; } catch (e) {}
+function persistCfg() {
+  try { localStorage.setItem("ic_cfg", JSON.stringify(state)); } catch (e) {}
+}
+
+/* ---------- 主题 ---------- */
+(function initTheme() {
+  const th = localStorage.getItem("ic_theme");
+  if (th) document.documentElement.setAttribute("data-theme", th);
+})();
+$("themeBtn").onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", cur);
+  localStorage.setItem("ic_theme", cur);
+};
+
+/* ---------- 语言切换 ---------- */
+$("langBtn").onclick = () => {
+  state.lang = state.lang === "zh" ? "en" : "zh";
+  try { localStorage.setItem("ic_lang", state.lang); } catch (e) {}
+  applyI18n();
+};
+function applyI18n() {
+  document.title = t("title");
+  document.documentElement.setAttribute("lang", state.lang === "zh" ? "zh-CN" : "en");
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      if (el.type === "number" || el.type === "text" || el.type === "search") el.placeholder = t(el.getAttribute("data-i18n"));
+    } else {
+      el.textContent = t(el.getAttribute("data-i18n"));
+    }
+  });
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => { const s = t(el.getAttribute("data-i18n-title")); el.title = s; el.setAttribute("aria-label", s); });
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => { el.alt = t(el.getAttribute("data-i18n-alt")); });
+  const fmtSel = $("format");
+  const optMap = { "keep": "fmtKeep", "image/jpeg": "fmtJpg", "image/png": "fmtPng", "image/webp": "fmtWebp" };
+  Array.prototype.forEach.call(fmtSel.options, (o) => { if (optMap[o.value]) o.textContent = t(optMap[o.value]); });
+  $("langBtn").textContent = t("langBtn");
+  renderList();
+  updateSummary();
+  if ($("modal").classList.contains("open")) refreshPreviewCaptions();
+}
+
+/* ---------- 压缩 Worker（内联，零外部依赖） ---------- */
+const workerCode = `
+self.onmessage = async (e) => {
+  const { id, file, type, quality, targetBytes } = e.data;
+  try {
+    const bmp = await createImageBitmap(file);
+    const canvas = new OffscreenCanvas(bmp.width, bmp.height);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(bmp, 0, 0);
+    let q = quality;
+    if (targetBytes && (type === 'image/jpeg' || type === 'image/webp')) {
+      let lo = 0.1, hi = 1.0, best = lo;
+      for (let i = 0; i < 8; i++) {
+        const mid = (lo + hi) / 2;
+        const blob = await canvas.convertToBlob({ type, quality: mid });
+        if (blob.size <= targetBytes) { best = mid; lo = mid; } else { hi = mid; }
+      }
+      q = best;
+    }
+    const blob = await canvas.convertToBlob({ type, quality: q });
+    self.postMessage({ id, status: 'done', blob, size: blob.size, width: bmp.width, height: bmp.height });
+  } catch (err) {
+    self.postMessage({ id, status: 'fail', reason: String((err && err.message) || err) });
+  }
+};
+`;
+const supportsWorker =
+  typeof Worker !== "undefined" &&
+  typeof OffscreenCanvas !== "undefined" &&
+  "convertToBlob" in OffscreenCanvas.prototype &&
+  typeof createImageBitmap !== "undefined";
+let worker = null;
+const workerPending = new Map();
+if (supportsWorker) {
+  worker = new Worker(URL.createObjectURL(new Blob([workerCode], { type: "application/javascript" })));
+  worker.onmessage = (e) => {
+    const { id } = e.data;
+    const r = workerPending.get(id);
+    if (r) { workerPending.delete(id); r(e.data); }
+  };
+}
+function compressWithWorker(item) {
+  return new Promise((resolve) => {
+    workerPending.set(item.id, resolve);
+    worker.postMessage({
+      id: item.id, file: item.file, type: item._outType,
+      quality: item._quality, targetBytes: item._targetBytes,
+    });
+  });
+}
+async function compressMainThread(item) {
+  const url = URL.createObjectURL(item.file);
+  const img = await new Promise((res, rej) => {
+    const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = url;
+  });
+  const canvas = document.createElement("canvas");
+  canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+  canvas.getContext("2d").drawImage(img, 0, 0);
+  URL.revokeObjectURL(url);
+  let q = item._quality;
+  if (item._targetBytes && (item._outType === "image/jpeg" || item._outType === "image/webp")) {
+    let lo = 0.1, hi = 1.0, best = lo;
+    for (let i = 0; i < 8; i++) {
+      const mid = (lo + hi) / 2;
+      const b = await new Promise((r) => canvas.toBlob(r, item._outType, mid));
+      if (b && b.size <= item._targetBytes) { best = mid; lo = mid; } else hi = mid;
+    }
+    q = best;
+  }
+  const blob = await new Promise((r) => canvas.toBlob(r, item._outType, q));
+  if (!blob) throw new Error("编码失败");
+  return { status: "done", blob, size: blob.size, width: img.naturalWidth, height: img.naturalHeight };
+}
+
+/* ---------- 上传与校验 ---------- */
+function validate(file) {
+  const type = file.type;
+  if (!WHITE.includes(type)) return { ok: false, reason: t("errFmt") };
+  if (file.size > MAX) return { ok: false, reason: t("errSize") };
+  return { ok: true };
+}
+async function addFiles(fileList) {
+  for (const file of fileList) {
+    const v = validate(file);
+    if (!v.ok) { toast(v.reason + "：" + file.name); continue; }
+    const item = {
+      id: "f" + Math.random().toString(36).slice(2) + Date.now().toString(36),
+      file, name: file.name, originalType: file.type, originalSize: file.size,
+      status: "pending", compressedBlob: null, compressedSize: 0, ratio: 0,
+      error: "", origUrl: URL.createObjectURL(file), compUrl: null, dim: null,
+    };
+    state.items.push(item);
+    renderList();
+    await compressItem(item);
+  }
+  updateSummary();
+}
+
+/* ---------- 压缩调用 ---------- */
+let avifWarned = false;
+let targetWarned = false;
+async function compressItem(item) {
+  item.status = "processing"; item.error = ""; renderList();
+  item._outType = state.format === "keep" ? item.originalType : state.format;
+  if (item._outType === "image/avif") {
+    item._outType = "image/webp";
+    if (!avifWarned) { avifWarned = true; toast(t("avifFallback")); }
+  }
+  item._quality = state.quality / 100;
+  item._targetBytes = state.targetOn && state.targetKb ? state.targetKb * 1024 : null;
+  try {
+    const res = supportsWorker ? await compressWithWorker(item) : await compressMainThread(item);
+    if (res.status === "done") {
+      if (item.compUrl) URL.revokeObjectURL(item.compUrl);
+      item.compressedBlob = res.blob; item.compressedSize = res.size; item.status = "done";
+      item.dim = { w: res.width, h: res.height };
+      item.ratio = Math.round((1 - res.size / item.originalSize) * 100);
+      item.compUrl = URL.createObjectURL(res.blob);
+      if (item._targetBytes && res.size > item._targetBytes && !targetWarned) {
+        targetWarned = true; toast(t("targetUnreachable"));
+      }
+    } else {
+      item.status = "fail"; item.error = res.reason;
+    }
+  } catch (err) {
+    item.status = "fail"; item.error = String((err && err.message) || err);
+  }
+  renderList();
+  updateLiveHint();
+}
+
+function recompressAll() {
+  state.items.forEach((it) => { if (it.status === "done" || it.status === "fail") compressItem(it); });
+}
+
+/* ---------- 列表渲染 ---------- */
+function renderList() {
+  const body = $("listBody");
+  body.innerHTML = "";
+  if (state.items.length === 0) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = '<td colspan="8" class="empty">' + t("empty") + "</td>";
+    body.appendChild(tr);
+    return;
+  }
+  const statusMap = { pending: t("stPending"), processing: t("stProcessing"), done: t("stDone"), fail: t("stFail") };
+  for (const it of state.items) {
+    const tr = document.createElement("tr");
+    if (it.status === "fail") tr.className = "row-fail";
+    const checked = it._sel ? "checked" : "";
+    const compSize = it.status === "done" ? fmtSize(it.compressedSize) : (it.status === "processing" ? t("processing") : "—");
+    const ratio = it.status === "done" ? `<span class="ratio">↓${it.ratio}%</span>` : "—";
+    const act = [];
+    act.push(`<button class="btn ghost tiny" data-act="preview" data-id="${it.id}" ${it.status !== "done" ? "disabled" : ""}>${t("actPreview")}</button>`);
+    act.push(`<button class="btn ghost tiny" data-act="dl" data-id="${it.id}" ${it.status !== "done" ? "disabled" : ""}>${t("actDl")}</button>`);
+    act.push(`<button class="btn ghost tiny" data-act="copy" data-id="${it.id}" ${it.status !== "done" ? "disabled" : ""}>${t("actCopy")}</button>`);
+    act.push(`<button class="btn ghost tiny" data-act="del" data-id="${it.id}">${t("actDel")}</button>`);
+    tr.innerHTML = `
+      <td data-label="${t("colSel") || ""}"><input type="checkbox" data-act="sel" data-id="${it.id}" ${checked}/></td>
+      <td data-label="${t("colPreview")}"><img class="thumb" src="${it.origUrl}" alt="原图缩略图 ${it.name}"/></td>
+      <td data-label="${t("colName")}">${it.name}</td>
+      <td data-label="${t("colOrig")}">${fmtSize(it.originalSize)}</td>
+      <td data-label="${t("colComp")}">${compSize}</td>
+      <td data-label="${t("colRatio")}">${ratio}</td>
+      <td data-label="${t("colStatus")}"><span class="status ${it.status}">${statusMap[it.status]}</span></td>
+      <td data-label="${t("colAct")}"><div class="col-act">${act.join("")}</div>${it.error ? `<div class="err-msg">${it.error}</div>` : ""}</td>`;
+    body.appendChild(tr);
+  }
+}
+
+function updateSummary() {
+  const done = state.items.filter((i) => i.status === "done");
+  const sum = $("summary");
+  if (state.items.length === 0) { sum.classList.add("hidden"); return; }
+  sum.classList.remove("hidden");
+  const o = done.reduce((a, i) => a + i.originalSize, 0);
+  const c = done.reduce((a, i) => a + i.compressedSize, 0);
+  $("sumOrig").textContent = fmtSize(o);
+  $("sumComp").textContent = fmtSize(c);
+  const save = o > 0 ? Math.round((1 - c / o) * 100) : 0;
+  $("sumSave").textContent = save + "%";
+  updateLiveHint();
+}
+
+/* 实时压缩反馈（设置栏） */
+function updateLiveHint() {
+  const el = $("liveHint");
+  if (!el) return;
+  const done = state.items.filter((i) => i.status === "done");
+  if (!done.length) { el.textContent = t("liveHintEmpty"); return; }
+  const avg = Math.round(done.reduce((a, i) => a + i.ratio, 0) / done.length);
+  el.textContent = t("liveHint", { pct: avg });
+}
+
+/* ---------- 事件绑定 ---------- */
+const dz = $("dropzone");
+dz.onclick = () => $("fileInput").click();
+$("fileInput").onchange = (e) => { addFiles(e.target.files); e.target.value = ""; };
+["dragenter", "dragover"].forEach((ev) =>
+  dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.add("drag"); })
+);
+["dragleave", "drop"].forEach((ev) =>
+  dz.addEventListener(ev, (e) => { e.preventDefault(); if (ev === "drop" || e.target === dz) dz.classList.remove("drag"); })
+);
+dz.addEventListener("drop", (e) => {
+  if (e.dataTransfer && e.dataTransfer.files.length) addFiles(e.dataTransfer.files);
+});
+/* 整窗拖拽高亮 */
+let dragDepth = 0;
+const hasFiles = (dt) => dt && Array.prototype.indexOf.call(dt.types || [], "Files") > -1;
+window.addEventListener("dragenter", (e) => { if (hasFiles(e.dataTransfer)) { dragDepth++; dz.classList.add("drag"); } });
+window.addEventListener("dragover", (e) => { if (hasFiles(e.dataTransfer)) e.preventDefault(); });
+window.addEventListener("dragleave", () => { dragDepth = Math.max(0, dragDepth - 1); if (dragDepth === 0) dz.classList.remove("drag"); });
+window.addEventListener("drop", () => { dragDepth = 0; dz.classList.remove("drag"); });
+document.addEventListener("paste", (e) => {
+  const files = [];
+  if (e.clipboardData && e.clipboardData.items) {
+    for (const it of e.clipboardData.items) {
+      if (it.type && it.type.startsWith("image/") && it.kind === "file") {
+        const f = it.getAsFile(); if (f) files.push(f);
+      }
+    }
+  }
+  if (files.length) addFiles(files);
+});
+
+/* 设置控件 */
+$("quality").value = state.quality;
+$("qval").textContent = state.quality + "%";
+$("format").value = state.format;
+$("targetOn").checked = state.targetOn;
+$("targetKb").value = state.targetKb || "";
+$("targetKb").disabled = !state.targetOn;
+
+let qTimer = null;
+$("quality").oninput = (e) => {
+  state.quality = +e.target.value; $("qval").textContent = state.quality + "%";
+  persistCfg();
+  clearTimeout(qTimer); qTimer = setTimeout(recompressAll, 200);
+};
+$("format").onchange = (e) => { state.format = e.target.value; persistCfg(); recompressAll(); };
+$("targetOn").onchange = (e) => {
+  state.targetOn = e.target.checked; $("targetKb").disabled = !state.targetOn; persistCfg(); recompressAll();
+};
+$("targetKb").oninput = (e) => {
+  const v = parseInt(e.target.value, 10);
+  state.targetKb = isNaN(v) ? null : v; persistCfg();
+  clearTimeout(qTimer); qTimer = setTimeout(recompressAll, 300);
+};
+
+/* 列表操作（事件委托） */
+$("listBody").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-act]");
+  if (!btn) return;
+  const id = btn.getAttribute("data-id");
+  const act = btn.getAttribute("data-act");
+  const item = state.items.find((i) => i.id === id);
+  if (!item) return;
+  if (act === "preview") openPreview(item);
+  else if (act === "dl") downloadSingle(item);
+  else if (act === "copy") copyToClipboard(item);
+  else if (act === "del") removeItem(id);
+  else if (act === "sel") item._sel = btn.checked;
+});
+$("selHead").onchange = (e) => state.items.forEach((i) => (i._sel = e.target.checked));
+$("selAll").onclick = () => { state.items.forEach((i) => (i._sel = true)); $("selHead").checked = true; renderList(); };
+
+$("clearAll").onclick = () => {
+  if (!state.items.length) return;
+  if (!confirm(t("confirmClear"))) return;
+  state.items.forEach((i) => { URL.revokeObjectURL(i.origUrl); if (i.compUrl) URL.revokeObjectURL(i.compUrl); });
+  state.items = []; renderList(); updateSummary();
+};
+
+/* ---------- 下载 / 复制 ---------- */
+function outName(item) {
+  const base = item.name.replace(/\.[^.]+$/, "");
+  const ext = extOf(item._outType || item.originalType);
+  return `${base}_压缩.${ext}`;
+}
+function downloadSingle(item) {
+  if (item.status !== "done" || !item.compressedBlob) return;
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(item.compressedBlob);
+  a.download = outName(item);
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function selectedDone() {
+  const sel = state.items.filter((i) => i._sel && i.status === "done" && i.compressedBlob);
+  return sel.length ? sel : state.items.filter((i) => i.status === "done" && i.compressedBlob);
+}
+async function downloadZip() {
+  const items = selectedDone();
+  if (!items.length) { toast(t("toastNoDownload")); return; }
+  const files = [];
+  const counter = {};
+  for (const it of items) {
+    let name = outName(it);
+    if (counter[name] == null) { counter[name] = 0; }
+    else { counter[name] += 1; name = name.replace(/(\.[^.]+)$/, `_${counter[name]}$1`); }
+    const buf = new Uint8Array(await it.compressedBlob.arrayBuffer());
+    files.push({ name, data: buf });
+  }
+  const zip = buildZip(files);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(zip);
+  a.download = "compressed_" + Date.now() + ".zip";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast(t("toastPacked", { n: items.length }));
+}
+$("dlZip").onclick = downloadZip;
+
+async function copyToClipboard(item) {
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ [item._outType]: item.compressedBlob })]);
+    toast(t("toastCopied"));
+  } catch (e) {
+    toast(t("toastCopyFail"));
+  }
+}
+
+function removeItem(id) {
+  const idx = state.items.findIndex((i) => i.id === id);
+  if (idx < 0) return;
+  const it = state.items[idx];
+  URL.revokeObjectURL(it.origUrl); if (it.compUrl) URL.revokeObjectURL(it.compUrl);
+  state.items.splice(idx, 1); renderList(); updateSummary();
+}
+
+/* ---------- 预览对比 ---------- */
+let previewItem = null;
+function openPreview(item) {
+  if (item.status !== "done") return;
+  previewItem = item;
+  $("modalTitle").textContent = t("modalTitle") + " · " + item.name;
+  const oDim = item.dim ? `(${item.dim.w}×${item.dim.h})` : "";
+  $("cmpSide").innerHTML = `
+    <div class="pane"><div class="cap"><span>${t("paneOrig")}</span><span>${fmtSize(item.originalSize)} ${oDim}</span></div><img src="${item.origUrl}"/></div>
+    <div class="pane"><div class="cap"><span>${t("paneComp")} ↓${item.ratio}%</span><span>${fmtSize(item.compressedSize)}</span></div><img src="${item.compUrl}"/></div>`;
+  $("sliderBase").src = item.origUrl;
+  $("sliderTopImg").src = item.compUrl;
+  setSlider(50);
+  $("modal").classList.add("open");
+}
+function refreshPreviewCaptions() {
+  if (!previewItem) return;
+  $("modalTitle").textContent = t("modalTitle") + " · " + previewItem.name;
+  const caps = $("cmpSide").querySelectorAll(".cap");
+  if (caps.length >= 2) {
+    caps[0].querySelector("span").textContent = t("paneOrig");
+    caps[1].querySelector("span").textContent = t("paneComp") + " ↓" + previewItem.ratio + "%";
+  }
+}
+$("modalClose").onclick = () => $("modal").classList.remove("open");
+$("modal").onclick = (e) => { if (e.target === $("modal")) $("modal").classList.remove("open"); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("modal").classList.remove("open"); });
+$("tabSide").onclick = () => { $("cmpSide").classList.remove("hidden"); $("cmpSlider").classList.add("hidden"); $("tabSide").className = "btn tiny"; $("tabSlider").className = "btn ghost tiny"; };
+$("tabSlider").onclick = () => { $("cmpSlider").classList.remove("hidden"); $("cmpSide").classList.add("hidden"); $("tabSlider").className = "btn tiny"; $("tabSide").className = "btn ghost tiny"; };
+
+let sliderPos = 50;
+function setSlider(p) {
+  sliderPos = Math.max(0, Math.min(100, p));
+  $("sliderTop").style.width = sliderPos + "%";
+  $("sliderDivider").style.left = sliderPos + "%";
+}
+(function initSliderDrag() {
+  const wrap = $("cmpSlider");
+  let dragging = false;
+  const move = (clientX) => {
+    const r = wrap.getBoundingClientRect();
+    setSlider(((clientX - r.left) / r.width) * 100);
+  };
+  wrap.addEventListener("pointerdown", (e) => { dragging = true; move(e.clientX); wrap.setPointerCapture(e.pointerId); });
+  wrap.addEventListener("pointermove", (e) => { if (dragging) move(e.clientX); });
+  wrap.addEventListener("pointerup", () => { dragging = false; });
+})();
+
+/* ---------- 极简 ZIP（store 模式，UTF-8 文件名，零依赖） ---------- */
+const crcTable = (() => {
+  const t = new Uint32Array(256);
+  for (let n = 0; n < 256; n++) {
+    let c = n;
+    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    t[n] = c >>> 0;
+  }
+  return t;
+})();
+function crc32(buf) {
+  let c = 0xffffffff;
+  for (let i = 0; i < buf.length; i++) c = crcTable[(c ^ buf[i]) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+}
+function buildZip(files) {
+  const enc = new TextEncoder();
+  const chunks = [];
+  const central = [];
+  let offset = 0;
+  const DOS = 0x21; // 1980-01-01
+  const FLAG = 0x0800; // UTF-8 文件名
+  for (const f of files) {
+    const name = enc.encode(f.name);
+    const data = f.data;
+    const crc = crc32(data);
+    const size = data.length;
+    const lh = new DataView(new ArrayBuffer(30));
+    lh.setUint32(0, 0x04034b50, true);
+    lh.setUint16(4, 20, true);
+    lh.setUint16(6, FLAG, true);
+    lh.setUint16(8, 0, true); // store
+    lh.setUint16(10, 0, true);
+    lh.setUint16(12, DOS, true);
+    lh.setUint32(14, crc, true);
+    lh.setUint32(18, size, true);
+    lh.setUint32(22, size, true);
+    lh.setUint16(26, name.length, true);
+    lh.setUint16(28, 0, true);
+    chunks.push(new Uint8Array(lh.buffer), name, data);
+    const ch = new DataView(new ArrayBuffer(46));
+    ch.setUint32(0, 0x02014b50, true);
+    ch.setUint16(4, 20, true);
+    ch.setUint16(6, 20, true);
+    ch.setUint16(8, FLAG, true);
+    ch.setUint16(10, 0, true);
+    ch.setUint16(12, 0, true);
+    ch.setUint16(14, DOS, true);
+    ch.setUint32(16, crc, true);
+    ch.setUint32(20, size, true);
+    ch.setUint32(24, size, true);
+    ch.setUint16(28, name.length, true);
+    ch.setUint16(30, 0, true);
+    ch.setUint16(32, 0, true);
+    ch.setUint16(34, 0, true);
+    ch.setUint16(36, 0, true);
+    ch.setUint32(38, 0, true);
+    ch.setUint32(42, offset, true);
+    central.push({ header: new Uint8Array(ch.buffer), name });
+    offset += 30 + name.length + size;
+  }
+  let centralSize = 0;
+  const cdChunks = [];
+  for (const c of central) { cdChunks.push(c.header, c.name); centralSize += c.header.length + c.name.length; }
+  const eocd = new DataView(new ArrayBuffer(22));
+  eocd.setUint32(0, 0x06054b50, true);
+  eocd.setUint16(4, 0, true);
+  eocd.setUint16(6, 0, true);
+  eocd.setUint16(8, files.length, true);
+  eocd.setUint16(10, files.length, true);
+  eocd.setUint32(12, centralSize, true);
+  eocd.setUint32(16, offset, true);
+  eocd.setUint16(20, 0, true);
+  return new Blob([...chunks, ...cdChunks, new Uint8Array(eocd.buffer)], { type: "application/zip" });
+}
+
+/* ---------- 初始化 ---------- */
+applyI18n();
+
+/* 离线可用（渐进增强；注册失败不影响功能） */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+}</script>
+</body>
+</html>
