@@ -212,16 +212,22 @@
   .toast.show { opacity: 1; }
 
   /* ---------- 移动端适配 ---------- */
+  /* 屏蔽 iOS 点击高亮，输入聚焦时不缩放（字号 ≥16px 防止自动放大） */
+  * { -webkit-tap-highlight-color: transparent; }
   @media (max-width: 768px) {
     .wrap { padding: 16px 12px calc(56px + env(safe-area-inset-bottom)); }
     header.top { gap: 10px; }
-    .brand { font-size: 15px; }
+    .brand { font-size: 15px; min-width: 0; }
     .brand .logo { width: 30px; height: 30px; font-size: 14px; }
     .badge { font-size: 11px; padding: 2px 7px; }
     .dropzone { padding: 34px 14px; }
     .dropzone .big { font-size: 15px; }
     .settings { gap: 14px 16px; padding: 14px; }
     .field, .quality-row, .target-box { min-width: 100%; width: 100%; }
+    .field label { font-size: 13px; }
+    /* 控件占满整行；字号 16px 避免 iOS 聚焦缩放 */
+    select, input[type="number"] { width: 100%; font-size: 16px; }
+    .target-box input[type="number"] { flex: 1; width: auto; }
     .quality-row { gap: 12px; }
     input[type="range"] { width: 100%; flex: 1; }
     .summary { flex-direction: column; align-items: stretch; gap: 8px; }
@@ -229,9 +235,46 @@
     .summary .actions { width: 100%; }
     .summary .actions .btn { flex: 1; }
     .cmp-side { grid-template-columns: 1fr; }
+    .modal { padding: 10px; }
+    .modal-body { padding: 12px; }
+    .modal-head { padding: 12px 14px; }
+
+    /* 列表：桌面 8 列表格 → 移动端卡片 */
+    table.list { border: none; background: transparent; box-shadow: none; }
+    table.list thead { display: none; }
+    table.list, table.list tbody, table.list tr, table.list td { display: block; width: 100%; }
+    table.list tr {
+      border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px;
+      background: var(--panel); box-shadow: var(--shadow); overflow: hidden;
+    }
+    table.list tr:last-child { margin-bottom: 0; }
+    table.list td {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      min-width: 0; overflow-wrap: anywhere; text-align: right;
+      border-bottom: 1px solid var(--border); padding: 10px 14px;
+    }
+    table.list tr td:last-child { border-bottom: none; }
+    table.list td::before {
+      content: attr(data-label); color: var(--muted); font-weight: 600;
+      font-size: 12px; flex-shrink: 0; text-align: left;
+    }
+    table.list .thumb { width: 52px; height: 52px; }
+    /* 操作列：竖向堆叠，按钮等分铺满 */
+    table.list td:last-child { flex-direction: column; align-items: stretch; text-align: left; }
+    table.list td:last-child .col-act { width: 100%; }
+    table.list td:last-child .col-act .btn { flex: 1; }
+    table.list .err-msg { text-align: left; }
+  }
+  /* 中屏手机：操作按钮两列排布，避免英文按钮挤压 */
+  @media (max-width: 480px) {
+    .badge { white-space: normal; }
+    table.list td:last-child .col-act { flex-wrap: wrap; }
+    table.list td:last-child .col-act .btn { flex: 1 1 45%; }
   }
   @media (max-width: 380px) {
     .brand .name { max-width: 96px; }
+    .toolbar { gap: 6px; }
+    .icon-btn { min-width: 34px; padding: 0 8px; }
   }
   .seo-copy { max-width: 880px; margin: 28px auto 0; padding: 0 14px; color: var(--muted); font-size: 14px; line-height: 1.7; }
   .seo-copy h2 { font-size: 17px; color: var(--text); margin: 22px 0 8px; }
