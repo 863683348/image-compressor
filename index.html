@@ -424,6 +424,8 @@
 
     <h3 data-i18n="faq8Q">压缩图片对网站 SEO 和加载速度有帮助吗？</h3>
     <p data-i18n="faq8A">有。更小的图片能提升网页加载速度、改善 Core Web Vitals（LCP），有助于「图片压缩 SEO / optimize images for web / 网站图片优化」。因全程本地处理，原始图不会上传，兼顾性能与隐私。</p>
+
+    <p style="text-align:center;margin:24px 0 0"><a href="guide.html" style="color:var(--primary);font-weight:600;text-decoration:none">📖 阅读完整指南：如何将图片压缩到指定大小（200KB / 100KB / 50KB）</a></p>
   </section>
 
   <footer data-i18n="footer">所有图片仅在你的浏览器内压缩，不会发送到任何服务器 · 断网也可用 · 本页为纯前端 MVP 原型</footer>
@@ -598,7 +600,9 @@ const I18N = {
   },
 };
 function t(key, params) {
-  let s = (I18N[state.lang] && I18N[state.lang][key]) || key;
+  let s = I18N[state.lang] && I18N[state.lang][key];
+  if (s === undefined && state.lang !== "en") s = I18N["en"] && I18N["en"][key];
+  if (s === undefined) s = key;
   if (params) for (const k in params) s = s.split("{" + k + "}").join(params[k]);
   return s;
 }
